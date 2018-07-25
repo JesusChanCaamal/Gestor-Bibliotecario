@@ -1,0 +1,8 @@
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\obj\Debug\softjace.csprojResolveAssemblyReference.cache
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\obj\Debug\softjace.frmUsuarios.resources
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\obj\Debug\softjace.csproj.GenerateResource.Cache
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\bin\Debug\softjace.exe.config
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\bin\Debug\softjace.exe
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\bin\Debug\softjace.pdb
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\obj\Debug\softjace.exe
+C:\Users\Crist\Documents\SharpDevelop Projects\softjace\softjace\obj\Debug\softjace.pdb
