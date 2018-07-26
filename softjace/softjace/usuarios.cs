@@ -21,7 +21,7 @@ namespace softjace
 		public string nombre;
 		public string apellidoP;
 		public string apellidoM;
-		public int telefono;
+		public string telefono;
 		public string genero;
 		public int edad;
 		public string idlocalidad;
@@ -33,36 +33,35 @@ namespace softjace
 		public void filtrarUsuarios(string nom,DataGridView dgv)
 		{
 			
-			string sql="SELECT u.Matricula,u.nombre,u.apellidoP,u.apellidoM,u.telefono,u.genero,u.edad,l.idlocalidad" +
-				" FROM usuario as u INNER JOIN localidad as l ON u.idlocalidad=l.idlocalidad" +
+			string sql="SELECT u.Matricula,u.nombre,u.apellidoP,u.apellidoM,u.telefono,u.genero,u.edad,l.localidad,l.id_localidad" +
+				" FROM usuarios as u INNER JOIN localidades as l ON u.id_localidad=l.id_localidad" +
 				" WHERE u.nombre LIKE '"+nom+"%'";
 			dgv.DataSource= FrameBD.SQLSEL(sql);
 			dgv.DataMember="datos";
-			dgv.Columns["idlocalidad"].Visible=false;
-		}
-		public void addUsuario()
-		{
-			string sql= string.Format("INSERT INTO Usuario(Matricula,nombre,ApellidoP,apellidoM,telefono,genero,edad,idlocalidad)" +
-			                          " VALUES('{0}','{1}','{2}','{3}',{4},'{5}',{6},'{7}');",Matricula,nombre,apellidoP,apellidoM,telefono,genero,edad,idlocalidad);
-			FrameBD.SQLIDU(sql);
+			dgv.Columns["id_localidad"].Visible=false;
 		}
 		
 		public void guardar()
 		{
-			string sql= string.Format("CALL addUsuario('{0}','{1}','{2}','{3}',{4},'{5}',{6},{7});",Matricula,nombre,apellidoP,apellidoM,telefono,genero,edad,idlocalidad);
+			string sql= string.Format("CALL addUsuario('{0}','{1}','{2}','{3}','{4}','{5}',{6},'{7}');",Matricula,nombre,apellidoP,apellidoM,telefono,genero,edad,idlocalidad);
 			FrameBD.SQLIDU(sql);
 		}
-		public void eliminarAuto(string matri)
+		public void update()
 		{
-			string sql="DELETE FROM Usuario WHERE Matricula='"+matri+"';";
+			string sql= string.Format("CALL updUsuario('{0}','{1}','{2}','{3}','{4}','{5}',{6},'{7}');",Matricula,nombre,apellidoP,apellidoM,telefono,genero,edad,idlocalidad);
+			FrameBD.SQLIDU(sql);
+		}
+		public void eliminarUsuario(string matri)
+		{
+			string sql="DELETE FROM Usuarios WHERE Matricula='"+matri+"';";
 			FrameBD.SQLIDU(sql);
 		}
 		public void getLocalidad(ComboBox cmb)
 		{
-			string consulta="SELECT idLocalidad,Nombre From localidad";
+			string consulta="SELECT id_Localidad,Localidad From localidades";
 			cmb.DataSource=FrameBD.SQLCOMBO(consulta);
-			cmb.DisplayMember="Nombre";
-			cmb.ValueMember="idLocalidad";
+			cmb.DisplayMember="Localidad";
+			cmb.ValueMember="id_Localidad";
 		}
 		
 	}

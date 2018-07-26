@@ -122,6 +122,7 @@ namespace softjace
 			this.btnEditar.TabIndex = 34;
 			this.btnEditar.Text = "Editar";
 			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.BtnEditarClick);
 			// 
 			// btnEliminar
 			// 
@@ -133,6 +134,7 @@ namespace softjace
 			this.btnEliminar.TabIndex = 33;
 			this.btnEliminar.Text = "Guardar";
 			this.btnEliminar.UseVisualStyleBackColor = true;
+			this.btnEliminar.Click += new System.EventHandler(this.BtnEliminarClick);
 			// 
 			// btnGuardar
 			// 
@@ -192,35 +194,35 @@ namespace softjace
 			this.txtEdad.Location = new System.Drawing.Point(108, 190);
 			this.txtEdad.Name = "txtEdad";
 			this.txtEdad.Size = new System.Drawing.Size(116, 20);
-			this.txtEdad.TabIndex = 26;
+			this.txtEdad.TabIndex = 5;
 			// 
 			// txtApellidoP
 			// 
 			this.txtApellidoP.Location = new System.Drawing.Point(107, 135);
 			this.txtApellidoP.Name = "txtApellidoP";
 			this.txtApellidoP.Size = new System.Drawing.Size(116, 20);
-			this.txtApellidoP.TabIndex = 25;
+			this.txtApellidoP.TabIndex = 3;
 			// 
 			// txtApellidoM
 			// 
 			this.txtApellidoM.Location = new System.Drawing.Point(108, 161);
 			this.txtApellidoM.Name = "txtApellidoM";
 			this.txtApellidoM.Size = new System.Drawing.Size(116, 20);
-			this.txtApellidoM.TabIndex = 24;
+			this.txtApellidoM.TabIndex = 4;
 			// 
 			// txtNombre
 			// 
 			this.txtNombre.Location = new System.Drawing.Point(108, 112);
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(116, 20);
-			this.txtNombre.TabIndex = 23;
+			this.txtNombre.TabIndex = 2;
 			// 
 			// txtMatricula
 			// 
 			this.txtMatricula.Location = new System.Drawing.Point(108, 87);
 			this.txtMatricula.Name = "txtMatricula";
 			this.txtMatricula.Size = new System.Drawing.Size(116, 20);
-			this.txtMatricula.TabIndex = 22;
+			this.txtMatricula.TabIndex = 1;
 			// 
 			// label1
 			// 
@@ -236,6 +238,7 @@ namespace softjace
 			this.txtBuscar.Name = "txtBuscar";
 			this.txtBuscar.Size = new System.Drawing.Size(389, 20);
 			this.txtBuscar.TabIndex = 20;
+			this.txtBuscar.TextChanged += new System.EventHandler(this.TxtBuscarTextChanged);
 			// 
 			// dgvUsuarios
 			// 
@@ -283,14 +286,14 @@ namespace softjace
 			this.txtTelefono.Location = new System.Drawing.Point(107, 249);
 			this.txtTelefono.Name = "txtTelefono";
 			this.txtTelefono.Size = new System.Drawing.Size(116, 20);
-			this.txtTelefono.TabIndex = 40;
+			this.txtTelefono.TabIndex = 7;
 			// 
 			// txtGenero
 			// 
 			this.txtGenero.Location = new System.Drawing.Point(107, 223);
 			this.txtGenero.Name = "txtGenero";
 			this.txtGenero.Size = new System.Drawing.Size(116, 20);
-			this.txtGenero.TabIndex = 39;
+			this.txtGenero.TabIndex = 6;
 			// 
 			// frmUsuarios
 			// 

@@ -35,7 +35,7 @@ namespace AccesoADatos
             puerto = 3309;
             usuario = "root";
             password = "chan125";
-            bd = "bdsotfjace";
+            bd = "bdsoftjace";
 
 
             conex.Close();
