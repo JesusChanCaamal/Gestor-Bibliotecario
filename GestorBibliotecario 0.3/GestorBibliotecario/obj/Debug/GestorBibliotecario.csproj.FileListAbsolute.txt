@@ -1,0 +1,12 @@
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.csprojResolveAssemblyReference.cache
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.frmPrestamos.resources
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.MainForm.resources
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.csproj.GenerateResource.Cache
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\bin\Debug\GestorBibliotecario.exe.config
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\bin\Debug\GestorBibliotecario.exe
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\bin\Debug\GestorBibliotecario.pdb
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.exe
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.pdb
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.frmAutores.resources
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.frmLibros.resources
+C:\Users\abril\Documents\SharpDevelop Projects\GestorBibliotecario\GestorBibliotecario\obj\Debug\GestorBibliotecario.frmUsuarios.resources
