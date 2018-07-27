@@ -1,0 +1,29 @@
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.exe.config
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.exe
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.pdb
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.csprojResolveAssemblyReference.cache
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\obj\Debug\Gestor_Bibliotecario.MainForm.resources
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.csproj.GenerateResource.Cache
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.exe
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.pdb
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario\Gestor Bibliotecario\obj\Debug\Gestor_Bibliotecario.autor.resources
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.exe.config
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.exe
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.pdb
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.csprojResolveAssemblyReference.cache
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor_Bibliotecario.autor.resources
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor_Bibliotecario.MainForm.resources
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.csproj.GenerateResource.Cache
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.exe
+C:\Users\jfcha\Documents\SharpDevelop Projects\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.pdb
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.csprojResolveAssemblyReference.cache
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor_Bibliotecario.autor.resources
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor_Bibliotecario.MainForm.resources
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.csproj.GenerateResource.Cache
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.exe
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.exe.config
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.exe
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\bin\Debug\Gestor Bibliotecario.pdb
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Gestor Bibliotecario.pdb
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\softjace.frmUsuarios.resources
+C:\Users\Crist\Desktop\JACESOFT\Gestor Bibliotecario 0.1\Gestor Bibliotecario\obj\Debug\Prestamos_softjace.FrmPrestamos.resources
