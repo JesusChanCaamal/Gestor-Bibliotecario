@@ -57,6 +57,7 @@
     <Compile Include="autor.Designer.cs">
       <DependentUpon>autor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Autores.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="FrameBD.cs" />
     <Compile Include="inicio.cs" />

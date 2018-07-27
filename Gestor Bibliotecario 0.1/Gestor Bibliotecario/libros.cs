@@ -20,19 +20,19 @@ namespace Gestor_Bibliotecario
 	/// </summary>
 	public class libros
 	{
-		public string codigo {get; set;}
+		
 		public string titulo {get; set;}
 		public string isbn {get; set;}
 		public string genero {get; set;}
-		public double paginas {get; set;}
+		public int paginas {get; set;}
 		public string edicion{get; set;}
 		public string editorial {get; set;}
-		public double precio {get; set;}
+		public int id_autor {get; set;}
+		public int n_ejemplares {get; set;}
+		public int disponible {get; set;}
 		
-			public string nombre {get; set;}
-		public string apellidoP {get; set;}
-		public string apellidoM {get; set;}
-		public string pais {get; set;}
+		
+			
 		
 		
 		
@@ -41,7 +41,8 @@ namespace Gestor_Bibliotecario
 		}
 		
 		
-		public void actualizar(string codigo, string titulo,string isbn, string genero, string paginas, string edicion, string editorial )
+		
+	     /*public void actualizar(string codigo, string titulo,string isbn, string genero, string paginas, string edicion, string editorial )
 		{
 		
 			string sql =string.Format("UPDATE libros SET Titulo='{1}',ISBN='{2}',Genero='{3}',N_paginas='{4}',Anio_Edicion={5},id_editorial='{6}'"+
@@ -50,91 +51,132 @@ namespace Gestor_Bibliotecario
 			//MessageBox.Show(sql);
 				
 			FrameBD.SQLIDU(sql);
+		}*/
+		
+		
+		
+		
+		
+		public void libro(string isb)
+		{
+			string sql = "DELETE FROM libros WHERE ISBN ='" + isb + "';";
+			FrameBD.SQLIDU(sql);
+			
 		}
 		
-		
-		
-		
-		
-		public void destroy(string placa)
+		public void vib(string isb)
 		{
-			string sql = "DELETE FROM libros WHERE codigo '" + codigo + "';";
+			string sql = "DELETE FROM libros_autores WHERE ISBN ='" + isb  + "';";
+			FrameBD.SQLIDU(sql);
+			
+		}
+		
+		public void ejmepla(string isb)
+		{
+			string sql = "DELETE FROM ejemplares WHERE ISBN ='" + isb+ "';";
+			FrameBD.SQLIDU(sql);
+			
+		}
+		
+			
+		public void lib()
+		{
+			//amacenamiento
+			string sql =string.Format("CALL addLibros('{0}','{1}',{2},{3},{4},'{5}');",isbn,titulo,genero,editorial,paginas,edicion);
+			
+			
+		
 			FrameBD.SQLIDU(sql);
 			
 		}
 		
 		
 		
-		public void lib(string idautor)
+		
+		
+		
+		
+		/*public void lib()
 		{
 			//amacenamiento
-			string sql =string.Format("INSERT INTO libros (codigo,Titulo,ISBN,Genero,N_paginas,Anio_Edicion,id_editorial)" +  
-                                      " VALUES ('{0}','{1}','{2}','{3}',{4},'{5}','{6}');",codigo,titulo,isbn,genero,paginas,edicion,editorial);
+			string sql =string.Format("INSERT INTO libros (ISBN,Titulo,id_Genero,id_editorial,N_Paginas,Anio_edicion)" +  
+                                      " VALUES ('{0}','{1}',{2},{3},{4},'{5}');",isbn,titulo,genero,editorial,paginas,edicion);
 			
-			string pivote = string.Format("INSERT INTO libro_autor VALUES('{0}','{1}')",isbn,idautor);
+			
 			
 		
-			FrameBD.SQLIDU(sql +  pivote);
+			FrameBD.SQLIDU(sql);
+			
+		}*/
+		
+		public void pivo()
+		{
+			Autores o = new Autores();
+			string pivote = string.Format("INSERT INTO libros_autores(isbn,id_autor) VALUES('{0}',{1});",isbn,id_autor);
+			FrameBD.SQLIDU(pivote);
 		}
 		
-	
-			public void filtrarlibros(string autor, DataGridView dgv)
+		public void pivoejemplares()
 		{
-			string sql = "SELECT  a.codigo,a.Titulo,a.ISBN,a.Genero,a.N_paginas,a.Anio_Edicion,a.id_editorial,s.id_autor" +
-                         " from (libros as a INNER JOIN libro_autor as f ON f.ISBN=a.ISBN)" +
-				         " INNER JOIN autor as s ON f.id_autor=s.id_autor"+
-                         " WHERE s.nombre like '" + autor + "%'";
+			string pivote = string.Format("INSERT INTO ejemplares(isbn,n_ejemplares,Disponible) VALUES('{0}',{1},{1});",isbn,n_ejemplares);
+			FrameBD.SQLIDU(pivote);	
+		}
+		
+		
+		
+	
+			public void filtrarlibros(string titu, DataGridView dgv)
+		{
+			string sql = "SELECT  a.ISBN,a.Titulo,a.id_Genero,n.genero,a.N_paginas,a.id_editorial,a.anio_edicion,m.editorial" +
+                         " from (((libros as a INNER JOIN libros_autores as f ON f.ISBN=a.ISBN)" +
+				         " INNER JOIN autores as s ON f.id_autor=s.id_autor)"+
+				         " INNER JOIN generos as n ON a.id_genero=n.id_genero)"+
+				         " INNER JOIN editoriales as m ON a.id_editorial=m.id_editorial"+
+				        
+                         " WHERE a.titulo like '" + titu+ "%'";
 
 			
 				dgv.DataSource=FrameBD.SQLSEL(sql);
 			dgv.DataMember="datos";
 			
+			dgv.Columns["id_genero"].Visible=false;
+			dgv.Columns["id_editorial"].Visible=false;
 			
 		}
-		
-		
-		
-		
-	//tabla de autor;
-
-	
-		
-		public void filtrarAutor(string autor, DataGridView dgv)
+			
+			
+			public void getAutores(ComboBox cmb)
 		{
-			string sql = "SELECT a.id_autor,a.nombre,a.apellidoP,a.apellidoM,a.pais,s.ISBN,s.Titulo" +
-                         " from ( autor as a INNER JOIN libro_autor as f ON f.id_autor=a.id_autor)" +
-				         " INNER JOIN libros as s ON f.ISBN=s.ISBN"+
-                         " WHERE s.titulo like '" + autor + "%'";
-			
-	
-			
-				dgv.DataSource=FrameBD.SQLSEL(sql);
-			dgv.DataMember="datos";
-			
-			dgv.Columns["Titulo"].Visible=true;
-		}	
-		
-		
-			public void getFabricantes(ComboBox cmb)
-		{
-			string consulta="SELECT id_autor,concat(apellidop,' ',apellidom,' ',nombre) as Escritor FROM autor";
+			string consulta="SELECT id_autor,concat(apellidop,' ',apellidom,' ',nombre) as Escritor FROM autores";
 			cmb.DataSource=FrameBD.SQLCOMBO(consulta);
 			cmb.DisplayMember="Escritor";
 			cmb.ValueMember= "id_autor";
 		}
+			
 		
-			
-			
-		public void autor()
+			public void getGeneros(ComboBox cmb)
 		{
-			//amacenamiento
-			string sql =string.Format("INSERT INTO autor (nombre,apellidoP,apellidoM,pais)" +  
-                                      " VALUES ('{0}','{1}','{2}','{3}');",nombre, apellidoP,apellidoM,pais);
-			FrameBD.SQLIDU(sql);
+			string consulta="SELECT id_Genero,genero FROM generos";
+			cmb.DataSource=FrameBD.SQLCOMBO(consulta);
+			cmb.DisplayMember="genero";
+			cmb.ValueMember= "id_Genero";
 		}
+			
+		
+			public void getEditorial(ComboBox cmb)
+		{
+			string consulta="SELECT id_Editorial,Editorial FROM Editoriales";
+			cmb.DataSource=FrameBD.SQLCOMBO(consulta);
+			cmb.DisplayMember="Editorial";
+			cmb.ValueMember= "id_Editorial";
+			
+		}	
+
+			
 		
 		
 		
+	
 		
 	}
 }

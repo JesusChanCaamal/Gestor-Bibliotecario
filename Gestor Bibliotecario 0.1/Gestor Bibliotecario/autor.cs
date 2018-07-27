@@ -18,8 +18,8 @@ namespace Gestor_Bibliotecario
 	/// </summary>
 	public partial class autor : Form
 	{
-		libros autores =new libros();
-		libros auto = new libros ();
+		Autores autores =new Autores();
+		Autores auto = new Autores ();
 		public autor()
 		{
 			//

@@ -21,7 +21,7 @@ namespace Gestor_Bibliotecario
 	{
 		libros libro = new libros();
 		libros datoslibros = new libros();
-		
+		Autores o = new Autores();
 		public MainForm()
 		{
 			//
@@ -36,37 +36,43 @@ namespace Gestor_Bibliotecario
 		
 		void BtnRegistrarClick(object sender, EventArgs e)
 		{
-			
-			libro.codigo= txtCodigo.Text;
-			libro.titulo=txtTitulo.Text;
 			libro.isbn= txtIsbn.Text;
-			libro.genero=txtGenero.Text;
+			libro.titulo=txtTitulo.Text;
+			libro.genero=cmbGenero.SelectedValue.ToString();
 			libro.paginas=Convert.ToInt32(txtPaginas.Text);
+			libro.editorial=cmbEditorial.SelectedValue.ToString();
 			libro.edicion=txtEdicion.Text;
-			libro.editorial=txtEditorial.Text;
+			libro.n_ejemplares=Convert.ToInt32(txtEjemplares.Text);
+			
+			libro.isbn=txtIsbn.Text;
+			libro.id_autor=Convert.ToInt32(cmbAutor.SelectedValue);
+			
+			
 			
 			
 			//oAuto.anio=Convert.ToInt32(txtAnio.Text);
 			//oAuto.costo= Convert.ToDouble(txtCosto.Text);
 			//libro.titulo= cmbFabricante.SelectedValue.ToString();
 			
-			libro.lib(cmbAutor.SelectedValue.ToString());
+			libro.lib();
+			libro.pivo();
+			libro.pivoejemplares();
 		
+			datoslibros.filtrarlibros(txtBusqueda.Text,dgvLibros);
 			
-			
-			if (txtCodigo.Text != "" && txtTitulo.Text != "" && txtIsbn.Text != "" && txtGenero.Text !="" && txtPaginas.Text != "" && txtEdicion.Text != "" && txtEditorial.Text != ""  ) 
+			if (txtTitulo.Text != "" && txtIsbn.Text != "" && txtPaginas.Text != "" && txtEdicion.Text != "" ) 
 			{
 			
 				}else
 						MessageBox.Show("te falto dato");
 					
-			if (txtCodigo.Text != "" && txtTitulo.Text != "" && txtIsbn.Text != "" && txtGenero.Text !="" && txtPaginas.Text != "" && txtEdicion.Text != "" && txtEditorial.Text != "" )
+			if (txtTitulo.Text != "" && txtIsbn.Text != "" && txtPaginas.Text != "" && txtEdicion.Text != "")
 			{
 				btnNuevo.Enabled=true;
 				
 				
 				}
-			datoslibros.filtrarlibros(txtBusqueda.Text,dgvLibros);
+			
 			
 	
 		}
@@ -75,10 +81,7 @@ namespace Gestor_Bibliotecario
 		{
 			txtTitulo.Clear();
 			txtPaginas.Clear();
-			txtGenero.Clear();
-			txtEditorial.Clear();
 			txtEdicion.Clear();
-			
 			txtTitulo.Focus();
 		}
 		
@@ -92,42 +95,40 @@ namespace Gestor_Bibliotecario
 		}
 		void BtnEditarClick(object sender, EventArgs e)
 		{
-			txtCodigo.Text = dgvLibros["codigo",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-				//pasamos de dgv a los txt para poder editar un dato
-				
-			txtTitulo.Text = dgvLibros["titulo",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			//pasamos fabricamte
-			txtIsbn.Text = dgvLibros["isbn",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			txtGenero.Text = dgvLibros["genero",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			//pasamos modelo
-			txtPaginas.Text = dgvLibros["paginas",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			//pasamos anio
-			txtEdicion.Text = dgvLibros["edicion",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			//pasamos costo
-			txtEditorial.Text = dgvLibros["editorial",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			
+
+		   txtIsbn.Text = dgvLibros["isbn",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   txtTitulo.Text = dgvLibros["titulo",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   cmbGenero.Text = dgvLibros["id_genero",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   txtPaginas.Text = dgvLibros["n_paginas",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   cmbEditorial.Text= dgvLibros["id_editorial",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   txtEdicion.Text = dgvLibros["anio_edicion",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   cmbGenero.SelectedValue=dgvLibros["id_genero",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   cmbEditorial.SelectedValue=dgvLibros["id_editorial",dgvLibros.CurrentCellAddress.Y].Value.ToString();
+		   txtEjemplares.Text=dgvLibros["id_ejemplares",dgvLibros.CurrentCellAddress.Y].Value.ToString();
 		
 	
 		}
 		void BtnEdicionClick(object sender, EventArgs e)
 		{
-			libro.actualizar(txtCodigo.Text,txtTitulo.Text,txtIsbn.Text,txtGenero.Text,txtPaginas.Text,txtEdicion.Text,txtEditorial.Text);
+			//libro.actualizar(txtTitulo.Text,txtIsbn.Text,txtPaginas.Text,txtEdicion.Text);
 	
 		}
 		void BtnBajaClick(object sender, EventArgs e)
 		{
 			
 			
-			
-			/*string codigo=dgvLibros["codigo",dgvLibros.CurrentCellAddress.Y].Value.ToString();
-			if (MessageBox.Show("Esta Seguro de elimiar auto com placa:"+
-			                   "cuidado",MessageBoxButtons.YesNo,
-			                    MessageBoxIcon.Exclamation)==DialogResult.Yes)*/
+		string isbn=dgvLibros[0,dgvLibros.CurrentCellAddress.Y].Value.ToString();
+			if (MessageBox.Show("Esta Seguro de elimiar libro com ISBN:"
+			                    + isbn,"cuidado",MessageBoxButtons.YesNo,
+			                    MessageBoxIcon.Exclamation)==DialogResult.Yes)
+			                   
 			                   
 				
 			{
-			//libro.destroy(codigo);
-			
+			libro.libro(isbn);
+			libro.vib(isbn);
+			libro.ejmepla(isbn);
+			libro.filtrarlibros(txtBusqueda.Text,dgvLibros);
 			}
 			
 			
@@ -137,7 +138,9 @@ namespace Gestor_Bibliotecario
 		{
 			
 			datoslibros.filtrarlibros(txtBusqueda.Text,dgvLibros);
-			datoslibros.getFabricantes(cmbAutor);
+			datoslibros.getAutores(cmbAutor);
+			datoslibros.getGeneros(cmbGenero);
+			datoslibros.getEditorial(cmbEditorial);
 		}
 		void BtnAutorClick(object sender, EventArgs e)
 		{
@@ -146,6 +149,12 @@ namespace Gestor_Bibliotecario
 			main.Show();
 	
 		}
+		void TxtBusquedaTextChanged(object sender, EventArgs e)
+		{
+			libro.filtrarlibros(txtBusqueda.Text,dgvLibros);
+	
+		}
+		
 		
 		
 				

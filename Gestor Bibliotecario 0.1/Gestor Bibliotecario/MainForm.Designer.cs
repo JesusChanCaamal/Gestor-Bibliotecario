@@ -18,11 +18,9 @@ namespace Gestor_Bibliotecario
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.TextBox txtEdicion;
 		private System.Windows.Forms.Label label7;
-		private System.Windows.Forms.TextBox txtEditorial;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox txtPaginas;
 		private System.Windows.Forms.Label label9;
-		private System.Windows.Forms.TextBox txtGenero;
 		private System.Windows.Forms.Label label10;
 		private System.Windows.Forms.TextBox txtBusqueda;
 		private System.Windows.Forms.Label label1;
@@ -32,13 +30,15 @@ namespace Gestor_Bibliotecario
 		private System.Windows.Forms.Button btnSalir;
 		private System.Windows.Forms.Button btnNuevo;
 		private System.Windows.Forms.Button btnEdicion;
-		private System.Windows.Forms.TextBox txtCodigo;
-		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.TextBox txtIsbn;
 		private System.Windows.Forms.DataGridView dgvLibros;
 		private System.Windows.Forms.Button btnAutor;
 		private System.Windows.Forms.ComboBox cmbAutor;
+		private System.Windows.Forms.ComboBox cmbEditorial;
+		private System.Windows.Forms.ComboBox cmbGenero;
+		private System.Windows.Forms.TextBox txtEjemplares;
+		private System.Windows.Forms.Label label2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -65,11 +65,9 @@ namespace Gestor_Bibliotecario
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtEdicion = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
-			this.txtEditorial = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtPaginas = new System.Windows.Forms.TextBox();
 			this.label9 = new System.Windows.Forms.Label();
-			this.txtGenero = new System.Windows.Forms.TextBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.txtBusqueda = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
@@ -79,13 +77,15 @@ namespace Gestor_Bibliotecario
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnNuevo = new System.Windows.Forms.Button();
 			this.btnEdicion = new System.Windows.Forms.Button();
-			this.txtCodigo = new System.Windows.Forms.TextBox();
-			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtIsbn = new System.Windows.Forms.TextBox();
 			this.dgvLibros = new System.Windows.Forms.DataGridView();
 			this.btnAutor = new System.Windows.Forms.Button();
 			this.cmbAutor = new System.Windows.Forms.ComboBox();
+			this.cmbGenero = new System.Windows.Forms.ComboBox();
+			this.cmbEditorial = new System.Windows.Forms.ComboBox();
+			this.txtEjemplares = new System.Windows.Forms.TextBox();
+			this.label2 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvLibros)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -106,29 +106,22 @@ namespace Gestor_Bibliotecario
 			// 
 			// txtEdicion
 			// 
-			this.txtEdicion.Location = new System.Drawing.Point(133, 272);
+			this.txtEdicion.Location = new System.Drawing.Point(135, 273);
 			this.txtEdicion.Name = "txtEdicion";
 			this.txtEdicion.Size = new System.Drawing.Size(100, 20);
 			this.txtEdicion.TabIndex = 14;
 			// 
 			// label7
 			// 
-			this.label7.Location = new System.Drawing.Point(27, 269);
+			this.label7.Location = new System.Drawing.Point(29, 270);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(100, 23);
 			this.label7.TabIndex = 13;
 			this.label7.Text = "Año de Edicion";
 			// 
-			// txtEditorial
-			// 
-			this.txtEditorial.Location = new System.Drawing.Point(133, 317);
-			this.txtEditorial.Name = "txtEditorial";
-			this.txtEditorial.Size = new System.Drawing.Size(100, 20);
-			this.txtEditorial.TabIndex = 16;
-			// 
 			// label8
 			// 
-			this.label8.Location = new System.Drawing.Point(27, 314);
+			this.label8.Location = new System.Drawing.Point(27, 230);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(100, 23);
 			this.label8.TabIndex = 15;
@@ -136,29 +129,22 @@ namespace Gestor_Bibliotecario
 			// 
 			// txtPaginas
 			// 
-			this.txtPaginas.Location = new System.Drawing.Point(133, 223);
+			this.txtPaginas.Location = new System.Drawing.Point(133, 187);
 			this.txtPaginas.Name = "txtPaginas";
 			this.txtPaginas.Size = new System.Drawing.Size(100, 20);
 			this.txtPaginas.TabIndex = 18;
 			// 
 			// label9
 			// 
-			this.label9.Location = new System.Drawing.Point(27, 217);
+			this.label9.Location = new System.Drawing.Point(27, 181);
 			this.label9.Name = "label9";
 			this.label9.Size = new System.Drawing.Size(100, 23);
 			this.label9.TabIndex = 17;
 			this.label9.Text = "No. de Paginas";
 			// 
-			// txtGenero
-			// 
-			this.txtGenero.Location = new System.Drawing.Point(133, 179);
-			this.txtGenero.Name = "txtGenero";
-			this.txtGenero.Size = new System.Drawing.Size(100, 20);
-			this.txtGenero.TabIndex = 20;
-			// 
 			// label10
 			// 
-			this.label10.Location = new System.Drawing.Point(27, 173);
+			this.label10.Location = new System.Drawing.Point(30, 142);
 			this.label10.Name = "label10";
 			this.label10.Size = new System.Drawing.Size(100, 23);
 			this.label10.TabIndex = 19;
@@ -170,6 +156,7 @@ namespace Gestor_Bibliotecario
 			this.txtBusqueda.Name = "txtBusqueda";
 			this.txtBusqueda.Size = new System.Drawing.Size(353, 20);
 			this.txtBusqueda.TabIndex = 22;
+			this.txtBusqueda.TextChanged += new System.EventHandler(this.TxtBusquedaTextChanged);
 			// 
 			// label1
 			// 
@@ -239,24 +226,9 @@ namespace Gestor_Bibliotecario
 			this.btnEdicion.UseVisualStyleBackColor = true;
 			this.btnEdicion.Click += new System.EventHandler(this.BtnEdicionClick);
 			// 
-			// txtCodigo
-			// 
-			this.txtCodigo.Location = new System.Drawing.Point(133, 64);
-			this.txtCodigo.Name = "txtCodigo";
-			this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-			this.txtCodigo.TabIndex = 30;
-			// 
-			// label2
-			// 
-			this.label2.Location = new System.Drawing.Point(28, 61);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(100, 23);
-			this.label2.TabIndex = 31;
-			this.label2.Text = "Codigo";
-			// 
 			// label3
 			// 
-			this.label3.Location = new System.Drawing.Point(30, 139);
+			this.label3.Location = new System.Drawing.Point(30, 61);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(100, 23);
 			this.label3.TabIndex = 33;
@@ -264,7 +236,7 @@ namespace Gestor_Bibliotecario
 			// 
 			// txtIsbn
 			// 
-			this.txtIsbn.Location = new System.Drawing.Point(135, 142);
+			this.txtIsbn.Location = new System.Drawing.Point(135, 64);
 			this.txtIsbn.Name = "txtIsbn";
 			this.txtIsbn.Size = new System.Drawing.Size(100, 20);
 			this.txtIsbn.TabIndex = 32;
@@ -282,7 +254,7 @@ namespace Gestor_Bibliotecario
 			// 
 			// btnAutor
 			// 
-			this.btnAutor.Location = new System.Drawing.Point(27, 356);
+			this.btnAutor.Location = new System.Drawing.Point(27, 317);
 			this.btnAutor.Name = "btnAutor";
 			this.btnAutor.Size = new System.Drawing.Size(78, 22);
 			this.btnAutor.TabIndex = 36;
@@ -293,23 +265,56 @@ namespace Gestor_Bibliotecario
 			// cmbAutor
 			// 
 			this.cmbAutor.FormattingEnabled = true;
-			this.cmbAutor.Location = new System.Drawing.Point(133, 356);
+			this.cmbAutor.Location = new System.Drawing.Point(133, 317);
 			this.cmbAutor.Name = "cmbAutor";
 			this.cmbAutor.Size = new System.Drawing.Size(121, 21);
 			this.cmbAutor.TabIndex = 37;
+			// 
+			// cmbGenero
+			// 
+			this.cmbGenero.FormattingEnabled = true;
+			this.cmbGenero.Location = new System.Drawing.Point(136, 144);
+			this.cmbGenero.Name = "cmbGenero";
+			this.cmbGenero.Size = new System.Drawing.Size(121, 21);
+			this.cmbGenero.TabIndex = 38;
+			// 
+			// cmbEditorial
+			// 
+			this.cmbEditorial.FormattingEnabled = true;
+			this.cmbEditorial.Location = new System.Drawing.Point(133, 227);
+			this.cmbEditorial.Name = "cmbEditorial";
+			this.cmbEditorial.Size = new System.Drawing.Size(121, 21);
+			this.cmbEditorial.TabIndex = 39;
+			// 
+			// txtEjemplares
+			// 
+			this.txtEjemplares.Location = new System.Drawing.Point(136, 368);
+			this.txtEjemplares.Name = "txtEjemplares";
+			this.txtEjemplares.Size = new System.Drawing.Size(100, 20);
+			this.txtEjemplares.TabIndex = 41;
+			// 
+			// label2
+			// 
+			this.label2.Location = new System.Drawing.Point(30, 365);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(100, 23);
+			this.label2.TabIndex = 40;
+			this.label2.Text = "C. ejemplares";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1106, 533);
+			this.Controls.Add(this.txtEjemplares);
+			this.Controls.Add(this.label2);
+			this.Controls.Add(this.cmbEditorial);
+			this.Controls.Add(this.cmbGenero);
 			this.Controls.Add(this.cmbAutor);
 			this.Controls.Add(this.btnAutor);
 			this.Controls.Add(this.dgvLibros);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.txtIsbn);
-			this.Controls.Add(this.label2);
-			this.Controls.Add(this.txtCodigo);
 			this.Controls.Add(this.btnEdicion);
 			this.Controls.Add(this.btnNuevo);
 			this.Controls.Add(this.btnSalir);
@@ -318,11 +323,9 @@ namespace Gestor_Bibliotecario
 			this.Controls.Add(this.btnRegistrar);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.txtBusqueda);
-			this.Controls.Add(this.txtGenero);
 			this.Controls.Add(this.label10);
 			this.Controls.Add(this.txtPaginas);
 			this.Controls.Add(this.label9);
-			this.Controls.Add(this.txtEditorial);
 			this.Controls.Add(this.label8);
 			this.Controls.Add(this.txtEdicion);
 			this.Controls.Add(this.label7);
